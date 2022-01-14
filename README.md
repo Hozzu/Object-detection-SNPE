@@ -33,4 +33,5 @@ You can of course change the model file and data set by yourself.
 ## Result
 
 It was tested on SA8195 running Automotive Grade Linux.  
-![image](https://user-images.githubusercontent.com/28533445/149467917-2360df30-b892-4a44-a6bf-d20f8f2138b9.png)
+
+![image](https://user-images.githubusercontent.com/28533445/149467971-f3af9c78-72fd-4f88-81c6-318ef7b42275.png)
