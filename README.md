@@ -1,24 +1,40 @@
-Requirements:
-ubuntu 16.04
-python 3.5
-tensorflow 1.13.2
-snpe-1.43
+# SNPE-object-detection
+Object detection application using SNPE (Snapdragon Neural Processing Engine)
 
+## What is this?
+This application is made for testing the speed and accuracy of object detection deep learning model.
 
-Guide:
-git clone https://github.com/tensorflow/models.git -b r1.13.0
+This appliation supports two mode: camera and image.
+Camera mode runs object detection from camera input and displays the result on monitor. This shows the speed and accuracy of model intuitively and visually.
+Image mode runs object detection with given image files and prints the average inference speed and mAP (mean absolute precision). This shows the speed and accuracy of model quantitatively.
 
-cd models/research
+## Build
+This application runs only on qualcomm HW since it uses SNPE.
 
-wget -O protobuf.zip https://github.com/google/protobuf/releases/download/v3.0.0/protoc-3.0.0-linux-x86_64.zip
+SNPE, opencv (only core and imgproc), and qcarcam client libraries for aarch64 Linux is included. If your system is not aarch64 Linux, you will need these libraries.
 
-unzip protobuf.zip
+Qcarcam (ais_client), fastcv, json-c, jpeg libraries are additionally required.
 
-./bin/protoc object_detection/protos/*.proto --python_out=.
+Python3.x and python modules (collections, numpy, math, json) are requried for calculating mAP.
 
-export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+After checking theses dependencis, build app using make.
 
-python object_detection/builders/model_builder_test.py
+It builds pkshin_detect binary.
 
-copy all the scripts in home directory
-run the make scripts in home directory
+## How to use
+
+Type pkshin_detect --help to show guide.
+
+run_camea.sh is an example running camera mode.
+
+run_mAP.sh is an example running image mode and calculating mAP.
+
+SSD Mobilenet V1 and V2, COCO2017 validation data set and annotations are included.
+
+Go to model directory to see how I converted the model.
+
+You can of course change the model file and data set by yourself.
+
+## Result
+
+It was tested on SA8195 running Automotive Grade Linux.
