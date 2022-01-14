@@ -1,4 +1,4 @@
-# SNPE-object-detection
+# Object-detection-SNPE
 Object detection application using SNPE (Snapdragon Neural Processing Engine)
 
 ## What is this?
