@@ -9,32 +9,27 @@ Camera mode runs object detection from camera input and displays the result on m
 Image mode runs object detection with given image files and prints the average inference speed and mAP (mean absolute precision). This shows the speed and accuracy of model quantitatively.  
 
 ## Build
-This application runs only on qualcomm HW since it uses SNPE.
+This application runs only on qualcomm HW since it uses SNPE.  
 
-SNPE, opencv (only core and imgproc), and qcarcam client libraries for aarch64 Linux is included. If your system is not aarch64 Linux, you will need these libraries.
+SNPE, opencv (only core and imgproc), and qcarcam client libraries for aarch64 Linux is included. If your system is not aarch64 Linux, you will need these libraries.  
+Qcarcam (ais_client), fastcv, json-c, jpeg libraries are additionally required.  
+Python3.x and python modules (collections, numpy, math, json) are requried for calculating mAP.  
 
-Qcarcam (ais_client), fastcv, json-c, jpeg libraries are additionally required.
-
-Python3.x and python modules (collections, numpy, math, json) are requried for calculating mAP.
-
-After checking theses dependencis, build app using make.
-
-It builds pkshin_detect binary.
+After checking theses dependencis, build app using make.  
+It builds pkshin_detect binary.  
 
 ## How to use
 
-Type pkshin_detect --help to show guide.
+Type pkshin_detect --help to show guide.  
 
-run_camea.sh is an example running camera mode.
+run_camea.sh is an example running camera mode.  
+run_mAP.sh is an example running image mode and calculating mAP.  
 
-run_mAP.sh is an example running image mode and calculating mAP.
-
-SSD Mobilenet V1 and V2, COCO2017 validation data set and annotations are included.
-
-Go to model directory to see how I converted the model.
+SSD Mobilenet V1 and V2, COCO2017 validation data set and annotations are included.  
+Go to model directory to see how I converted the model. 
 
 You can of course change the model file and data set by yourself.
 
 ## Result
 
-It was tested on SA8195 running Automotive Grade Linux.
+It was tested on SA8195 running Automotive Grade Linux.  
