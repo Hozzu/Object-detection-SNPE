@@ -4,9 +4,9 @@ Object detection application using SNPE (Snapdragon Neural Processing Engine)
 ## What is this?
 This application is made for testing the speed and accuracy of object detection deep learning model.
 
-This appliation supports two mode: camera and image.
-Camera mode runs object detection from camera input and displays the result on monitor. This shows the speed and accuracy of model intuitively and visually.
-Image mode runs object detection with given image files and prints the average inference speed and mAP (mean absolute precision). This shows the speed and accuracy of model quantitatively.
+This appliation supports two mode: camera and image.  
+Camera mode runs object detection from camera input and displays the result on monitor. This shows the speed and accuracy of model intuitively and visually.  
+Image mode runs object detection with given image files and prints the average inference speed and mAP (mean absolute precision). This shows the speed and accuracy of model quantitatively.  
 
 ## Build
 This application runs only on qualcomm HW since it uses SNPE.
