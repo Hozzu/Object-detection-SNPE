@@ -3,8 +3,8 @@ ubuntu 16.04
 python 3.5  
 tensorflow 1.13.2  
 snpe-1.43  
-
-
+  
+  
 Guide:  
 git clone https://github.com/tensorflow/models.git -b r1.13.0  
 cd models/research  
