@@ -167,7 +167,12 @@ bool run_image(zdl::SNPE::SNPE * snpe, char * label_path, char * directory_path,
                 resize_img_ptr[3 * i + 2] = b_resize_img_ptr[i];
             }
 
-            delete r_buf_ptr, g_buf_ptr, b_buf_ptr, r_resize_img_ptr, g_resize_img_ptr, b_resize_img_ptr;
+            delete r_buf_ptr;
+            delete g_buf_ptr;
+            delete b_buf_ptr;
+            delete r_resize_img_ptr;
+            delete g_resize_img_ptr;
+            delete b_resize_img_ptr;
 
             // Inference
             std::vector<float> f_resize_img_vec;
