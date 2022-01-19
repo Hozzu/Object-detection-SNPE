@@ -99,7 +99,12 @@ void qcarcam_event_handler(qcarcam_input_desc_t input_id, unsigned char* buf_ptr
         resize_img_ptr[3 * i + 2] = b_resize_img_ptr[i];
     }
 
-    delete r_buf_ptr, g_buf_ptr, b_buf_ptr, r_resize_img_ptr, g_resize_img_ptr, b_resize_img_ptr;
+    delete r_buf_ptr;
+    delete g_buf_ptr;
+    delete b_buf_ptr;
+    delete r_resize_img_ptr;
+    delete g_resize_img_ptr;
+    delete b_resize_img_ptr;
 
     // Inference
     std::vector<float> f_resize_img_vec;
@@ -199,11 +204,8 @@ void qcarcam_event_handler(qcarcam_input_desc_t input_id, unsigned char* buf_ptr
     // Free memory
     delete rgb_buf_ptr;
     delete resize_img_ptr;
-
-    if(uv)
-        fcvMemFree(uv);
-    if(y)
-        fcvMemFree(y);
+    fcvMemFree(uv);
+    fcvMemFree(y);
 }
 
 bool run_qcarcam(zdl::SNPE::SNPE * snpe_arg, char * label_path, char * display_path){
